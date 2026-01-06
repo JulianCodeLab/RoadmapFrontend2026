@@ -14,6 +14,8 @@
         --muted: #94a3b8;
         --accent: #38bdf8;
         --check: #22c55e;
+        --link: #93c5fd;
+        --linkHover: #bfdbfe;
       }
 
       * {
@@ -40,7 +42,7 @@
       }
 
       .progress-container {
-        max-width: 600px;
+        max-width: 780px;
         margin: 0 auto 2rem;
         text-align: center;
       }
@@ -67,25 +69,89 @@
       }
 
       section {
+        max-width: 980px;
+        margin: 0 auto 1.5rem;
         background: var(--card);
         border-radius: 12px;
         padding: 1.5rem;
-        margin-bottom: 1.5rem;
         border: 1px solid var(--border);
       }
 
       section h2 {
-        margin-top: 0;
+        margin: 0 0 0.75rem 0;
         color: var(--accent);
         font-size: 1.15rem;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 0.5rem;
       }
 
-      ul {
+      .resources {
+        margin: 0 0 1rem 0;
+        padding: 0.9rem 1rem;
+        border: 1px dashed var(--border);
+        border-radius: 12px;
+        background: rgba(148, 163, 184, 0.05);
+      }
+
+      .resources .title {
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-bottom: 0.5rem;
+      }
+
+      .resource-list {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.5rem 0.75rem;
+        margin: 0;
+        padding: 0;
+        list-style: none;
+      }
+
+      .resource-list li {
+        margin: 0;
+        padding: 0;
+      }
+
+      a.resource {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        text-decoration: none;
+        color: var(--link);
+        border: 1px solid rgba(147, 197, 253, 0.25);
+        padding: 0.35rem 0.55rem;
+        border-radius: 999px;
+        font-size: 0.9rem;
+        line-height: 1;
+        transition: transform 0.12s ease, background 0.12s ease,
+          color 0.12s ease, border-color 0.12s ease;
+      }
+
+      a.resource:hover {
+        color: var(--linkHover);
+        background: rgba(147, 197, 253, 0.07);
+        border-color: rgba(147, 197, 253, 0.45);
+        transform: translateY(-1px);
+      }
+
+      .pill {
+        font-size: 0.78rem;
+        color: var(--muted);
+        border: 1px solid var(--border);
+        padding: 0.15rem 0.45rem;
+        border-radius: 999px;
+      }
+
+      ul.tasks {
         list-style: none;
         padding-left: 0;
+        margin: 0;
       }
 
-      li {
+      li.task {
         margin-bottom: 0.6rem;
         display: flex;
         align-items: center;
@@ -97,6 +163,7 @@
         height: 18px;
         accent-color: var(--check);
         cursor: pointer;
+        flex: 0 0 auto;
       }
 
       label {
@@ -132,78 +199,426 @@
 
     <!-- CONTENIDO -->
     <section>
-      <h2>Semana 1 · Flexbox</h2>
-      <ul>
-        <li><input type="checkbox" /><label>Ejes (row / column)</label></li>
-        <li><input type="checkbox" /><label>justify-content</label></li>
-        <li><input type="checkbox" /><label>align-items</label></li>
-        <li><input type="checkbox" /><label>gap</label></li>
-        <li><input type="checkbox" /><label>Navbar con Flexbox</label></li>
-        <li><input type="checkbox" /><label>Cards con Flexbox</label></li>
+      <h2>Semana 1 · Flexbox <span class="pill">Aprender + practicar</span></h2>
+
+      <div class="resources">
+        <div class="title">📌 Recursos</div>
+        <ul class="resource-list">
+          <li>
+            <a
+              class="resource"
+              href="https://www.youtube.com/watch?v=AAtvnv6LNMk"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🎥 Video: Jonmircha (Flexbox 1/13)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_flexible_box_layout"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📄 Docs: MDN Flexbox</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://jonmircha.com/flexbox"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📝 Notas: Jonmircha Flexbox</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <ul class="tasks">
+        <li class="task">
+          <input type="checkbox" /><label>Ejes (row / column)</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" /><label>justify-content</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" /><label>align-items</label>
+        </li>
+        <li class="task"><input type="checkbox" /><label>gap</label></li>
+        <li class="task">
+          <input type="checkbox" /><label>Navbar con Flexbox</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" /><label>Cards con Flexbox</label>
+        </li>
       </ul>
     </section>
 
     <section>
-      <h2>Semana 2 · Grid</h2>
-      <ul>
-        <li><input type="checkbox" /><label>grid-template-columns</label></li>
-        <li><input type="checkbox" /><label>repeat()</label></li>
-        <li><input type="checkbox" /><label>minmax()</label></li>
-        <li><input type="checkbox" /><label>auto-fit / auto-fill</label></li>
-        <li>
+      <h2>Semana 2 · Grid <span class="pill">Estructuras completas</span></h2>
+
+      <div class="resources">
+        <div class="title">📌 Recursos</div>
+        <ul class="resource-list">
+          <li>
+            <a
+              class="resource"
+              href="https://www.youtube.com/watch?v=gCox2CqYvto"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🎥 Video: Jonmircha (Grid 1/17)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://developer.mozilla.org/es/docs/Web/CSS/CSS_grid_layout"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📄 Docs: MDN Grid</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://jonmircha.com/grid"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📝 Notas: Jonmircha Grid</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <ul class="tasks">
+        <li class="task">
+          <input type="checkbox" /><label>grid-template-columns</label>
+        </li>
+        <li class="task"><input type="checkbox" /><label>repeat()</label></li>
+        <li class="task"><input type="checkbox" /><label>minmax()</label></li>
+        <li class="task">
+          <input type="checkbox" /><label>auto-fit / auto-fill</label>
+        </li>
+        <li class="task">
           <input type="checkbox" /><label>Layout completo con Grid</label>
         </li>
       </ul>
     </section>
 
     <section>
-      <h2>Semana 3 · Responsive Design</h2>
-      <ul>
-        <li><input type="checkbox" /><label>Mobile first</label></li>
-        <li><input type="checkbox" /><label>Media queries</label></li>
-        <li><input type="checkbox" /><label>Breakpoints reales</label></li>
-        <li><input type="checkbox" /><label>Imágenes responsive</label></li>
+      <h2>
+        Semana 3 · Responsive Design <span class="pill">Mobile first</span>
+      </h2>
+
+      <div class="resources">
+        <div class="title">📌 Recursos</div>
+        <ul class="resource-list">
+          <li>
+            <a
+              class="resource"
+              href="https://www.youtube.com/watch?v=udGrXWeJp1Y"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🎥 Video: Jonmircha (Responsive Design)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://developer.mozilla.org/es/docs/Web/CSS/Media_Queries"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📄 Docs: MDN Media Queries</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://developer.mozilla.org/es/docs/Learn/HTML/Multimedia_and_embedding/Responsive_images"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🖼️ Docs: Imágenes responsive</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <ul class="tasks">
+        <li class="task">
+          <input type="checkbox" /><label>Mobile first</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" /><label>Media queries</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" /><label>Breakpoints reales</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" /><label>Imágenes responsive</label>
+        </li>
       </ul>
     </section>
 
     <section>
-      <h2>Semana 4 · CSS Moderno</h2>
-      <ul>
-        <li><input type="checkbox" /><label>CSS Variables</label></li>
-        <li><input type="checkbox" /><label>Jerarquía tipográfica</label></li>
-        <li><input type="checkbox" /><label>Espaciados consistentes</label></li>
-        <li><input type="checkbox" /><label>Introducción a Tailwind</label></li>
+      <h2>Semana 4 · CSS Moderno <span class="pill">Se ve pro</span></h2>
+
+      <div class="resources">
+        <div class="title">📌 Recursos</div>
+        <ul class="resource-list">
+          <li>
+            <a
+              class="resource"
+              href="https://www.youtube.com/watch?v=R5EXap3vNDA"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🎥 Video: Midudev (Tailwind CSS 4)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://developer.mozilla.org/es/docs/Web/CSS/Using_CSS_custom_properties"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📄 Docs: CSS Variables (MDN)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://tailwindcss.com/docs"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📄 Docs: Tailwind (oficial)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://midu.dev/curso/tailwind-desde-cero/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🧭 Curso: Tailwind (midu.dev)</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <ul class="tasks">
+        <li class="task">
+          <input type="checkbox" /><label>CSS Variables</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" /><label>Jerarquía tipográfica</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" /><label>Espaciados consistentes</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" /><label>Introducción a Tailwind</label>
+        </li>
       </ul>
     </section>
 
     <section>
-      <h2>Semana 5–6 · JavaScript</h2>
-      <ul>
-        <li><input type="checkbox" /><label>Funciones</label></li>
-        <li><input type="checkbox" /><label>Arrays y objetos</label></li>
-        <li><input type="checkbox" /><label>DOM</label></li>
-        <li><input type="checkbox" /><label>Fetch / Async Await</label></li>
-        <li><input type="checkbox" /><label>LocalStorage</label></li>
+      <h2>
+        Semana 5–6 · JavaScript <span class="pill">Interacción + APIs</span>
+      </h2>
+
+      <div class="resources">
+        <div class="title">📌 Recursos</div>
+        <ul class="resource-list">
+          <li>
+            <a
+              class="resource"
+              href="https://www.youtube.com/watch?v=2SetvwBV-SU"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🎥 Video: Jonmircha (JS Curso #1)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://www.youtube.com/watch?v=GP8OCiJLeN4"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🎥 Video: Jonmircha (Fetch + Async/Await)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://developer.mozilla.org/es/docs/Web/JavaScript"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📄 Docs: JavaScript (MDN)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://developer.mozilla.org/es/docs/Web/API/Document_Object_Model"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📄 Docs: DOM (MDN)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://developer.mozilla.org/es/docs/Web/API/Fetch_API"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📄 Docs: Fetch API (MDN)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Statements/async_function"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📄 Docs: async/await (MDN)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://developer.mozilla.org/es/docs/Web/API/Window/localStorage"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📄 Docs: localStorage (MDN)</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <ul class="tasks">
+        <li class="task"><input type="checkbox" /><label>Funciones</label></li>
+        <li class="task">
+          <input type="checkbox" /><label>Arrays y objetos</label>
+        </li>
+        <li class="task"><input type="checkbox" /><label>DOM</label></li>
+        <li class="task">
+          <input type="checkbox" /><label>Fetch / Async Await</label>
+        </li>
+        <li class="task">
+          <input type="checkbox" /><label>LocalStorage</label>
+        </li>
       </ul>
     </section>
 
     <section>
-      <h2>Semanas 7–9 · React</h2>
-      <ul>
-        <li><input type="checkbox" /><label>Componentes</label></li>
-        <li><input type="checkbox" /><label>Props</label></li>
-        <li><input type="checkbox" /><label>State</label></li>
-        <li><input type="checkbox" /><label>Hooks</label></li>
-        <li><input type="checkbox" /><label>React Router</label></li>
+      <h2>Semanas 7–9 · React <span class="pill">Stack laboral</span></h2>
+
+      <div class="resources">
+        <div class="title">📌 Recursos</div>
+        <ul class="resource-list">
+          <li>
+            <a
+              class="resource"
+              href="https://www.youtube.com/watch?v=7iobxzd_2wY"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🎥 Video: Midudev (Curso React)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://react.dev/learn"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📄 Docs: React (oficial)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://reactrouter.com/en/main"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📄 Docs: React Router</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://cursoreact.dev/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🧭 Curso: cursoreact.dev</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <ul class="tasks">
+        <li class="task">
+          <input type="checkbox" /><label>Componentes</label>
+        </li>
+        <li class="task"><input type="checkbox" /><label>Props</label></li>
+        <li class="task"><input type="checkbox" /><label>State</label></li>
+        <li class="task"><input type="checkbox" /><label>Hooks</label></li>
+        <li class="task">
+          <input type="checkbox" /><label>React Router</label>
+        </li>
       </ul>
     </section>
 
     <section>
-      <h2>Semana 10 · Profesionalización</h2>
-      <ul>
-        <li><input type="checkbox" /><label>Git</label></li>
-        <li><input type="checkbox" /><label>GitHub</label></li>
-        <li>
+      <h2>
+        Semana 10 · Profesionalización
+        <span class="pill">Listo para aplicar</span>
+      </h2>
+
+      <div class="resources">
+        <div class="title">📌 Recursos</div>
+        <ul class="resource-list">
+          <li>
+            <a
+              class="resource"
+              href="https://www.youtube.com/watch?v=niPExbK8lSw"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🎥 Video: Midudev (Git y GitHub)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://git-scm.com/book/es/v2"
+              target="_blank"
+              rel="noopener noreferrer"
+              >📄 Docs: Pro Git (libro)</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://pages.github.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🚀 Deploy: GitHub Pages</a
+            >
+          </li>
+          <li>
+            <a
+              class="resource"
+              href="https://docs.netlify.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              >🚀 Deploy: Netlify Docs</a
+            >
+          </li>
+        </ul>
+      </div>
+
+      <ul class="tasks">
+        <li class="task"><input type="checkbox" /><label>Git</label></li>
+        <li class="task"><input type="checkbox" /><label>GitHub</label></li>
+        <li class="task">
           <input type="checkbox" /><label>Deploy (Vercel / Netlify)</label>
         </li>
       </ul>
@@ -235,7 +650,7 @@
         const completed = Array.from(checkboxes).filter(
           (cb) => cb.checked
         ).length;
-        const percent = Math.round((completed / total) * 100);
+        const percent = total === 0 ? 0 : Math.round((completed / total) * 100);
 
         progressBar.style.width = percent + "%";
         progressText.textContent = `${completed} / ${total} tareas completadas (${percent}%)`;
