@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Roadmap Frontend Junior 2026</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <style>
+      :root {
+        --bg: #020617;
+        --card: #020617;
+        --border: #1e293b;
+        --text: #e5e7eb;
+        --muted: #94a3b8;
+        --accent: #38bdf8;
+        --check: #22c55e;
+      }
+
+      * {
+        box-sizing: border-box;
+        font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        background: linear-gradient(180deg, #020617, #020617);
+        color: var(--text);
+        padding: 2rem;
+      }
+
+      h1 {
+        text-align: center;
+        margin-bottom: 0.3rem;
+      }
+
+      .subtitle {
+        text-align: center;
+        color: var(--muted);
+        margin-bottom: 1.5rem;
+      }
+
+      .progress-container {
+        max-width: 600px;
+        margin: 0 auto 2rem;
+        text-align: center;
+      }
+
+      .progress-bar {
+        background: #020617;
+        border: 1px solid var(--border);
+        border-radius: 999px;
+        overflow: hidden;
+        height: 18px;
+      }
+
+      .progress {
+        height: 100%;
+        width: 0%;
+        background: linear-gradient(90deg, #22c55e, #38bdf8);
+        transition: width 0.3s ease;
+      }
+
+      .progress-text {
+        margin-top: 0.5rem;
+        color: var(--muted);
+        font-size: 0.9rem;
+      }
+
+      section {
+        background: var(--card);
+        border-radius: 12px;
+        padding: 1.5rem;
+        margin-bottom: 1.5rem;
+        border: 1px solid var(--border);
+      }
+
+      section h2 {
+        margin-top: 0;
+        color: var(--accent);
+        font-size: 1.15rem;
+      }
+
+      ul {
+        list-style: none;
+        padding-left: 0;
+      }
+
+      li {
+        margin-bottom: 0.6rem;
+        display: flex;
+        align-items: center;
+        gap: 0.5rem;
+      }
+
+      input[type="checkbox"] {
+        width: 18px;
+        height: 18px;
+        accent-color: var(--check);
+        cursor: pointer;
+      }
+
+      label {
+        cursor: pointer;
+        transition: opacity 0.2s, text-decoration 0.2s;
+      }
+
+      input[type="checkbox"]:checked + label {
+        text-decoration: line-through;
+        opacity: 0.5;
+      }
+
+      footer {
+        text-align: center;
+        color: var(--muted);
+        font-size: 0.9rem;
+        margin-top: 3rem;
+      }
+    </style>
+  </head>
+
+  <body>
+    <h1>🧠 Roadmap Frontend Junior 2026</h1>
+    <p class="subtitle">Checklist semanal · 4 horas diarias</p>
+
+    <!-- PROGRESO -->
+    <div class="progress-container">
+      <div class="progress-bar">
+        <div class="progress" id="progress"></div>
+      </div>
+      <div class="progress-text" id="progress-text"></div>
+    </div>
+
+    <!-- CONTENIDO -->
+    <section>
+      <h2>Semana 1 · Flexbox</h2>
+      <ul>
+        <li><input type="checkbox" /><label>Ejes (row / column)</label></li>
+        <li><input type="checkbox" /><label>justify-content</label></li>
+        <li><input type="checkbox" /><label>align-items</label></li>
+        <li><input type="checkbox" /><label>gap</label></li>
+        <li><input type="checkbox" /><label>Navbar con Flexbox</label></li>
+        <li><input type="checkbox" /><label>Cards con Flexbox</label></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Semana 2 · Grid</h2>
+      <ul>
+        <li><input type="checkbox" /><label>grid-template-columns</label></li>
+        <li><input type="checkbox" /><label>repeat()</label></li>
+        <li><input type="checkbox" /><label>minmax()</label></li>
+        <li><input type="checkbox" /><label>auto-fit / auto-fill</label></li>
+        <li>
+          <input type="checkbox" /><label>Layout completo con Grid</label>
+        </li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Semana 3 · Responsive Design</h2>
+      <ul>
+        <li><input type="checkbox" /><label>Mobile first</label></li>
+        <li><input type="checkbox" /><label>Media queries</label></li>
+        <li><input type="checkbox" /><label>Breakpoints reales</label></li>
+        <li><input type="checkbox" /><label>Imágenes responsive</label></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Semana 4 · CSS Moderno</h2>
+      <ul>
+        <li><input type="checkbox" /><label>CSS Variables</label></li>
+        <li><input type="checkbox" /><label>Jerarquía tipográfica</label></li>
+        <li><input type="checkbox" /><label>Espaciados consistentes</label></li>
+        <li><input type="checkbox" /><label>Introducción a Tailwind</label></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Semana 5–6 · JavaScript</h2>
+      <ul>
+        <li><input type="checkbox" /><label>Funciones</label></li>
+        <li><input type="checkbox" /><label>Arrays y objetos</label></li>
+        <li><input type="checkbox" /><label>DOM</label></li>
+        <li><input type="checkbox" /><label>Fetch / Async Await</label></li>
+        <li><input type="checkbox" /><label>LocalStorage</label></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Semanas 7–9 · React</h2>
+      <ul>
+        <li><input type="checkbox" /><label>Componentes</label></li>
+        <li><input type="checkbox" /><label>Props</label></li>
+        <li><input type="checkbox" /><label>State</label></li>
+        <li><input type="checkbox" /><label>Hooks</label></li>
+        <li><input type="checkbox" /><label>React Router</label></li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>Semana 10 · Profesionalización</h2>
+      <ul>
+        <li><input type="checkbox" /><label>Git</label></li>
+        <li><input type="checkbox" /><label>GitHub</label></li>
+        <li>
+          <input type="checkbox" /><label>Deploy (Vercel / Netlify)</label>
+        </li>
+      </ul>
+    </section>
+
+    <footer>🚀 Objetivo final: Portafolio + aplicar a Frontend Junior</footer>
+
+    <script>
+      const checkboxes = document.querySelectorAll('input[type="checkbox"]');
+      const progressBar = document.getElementById("progress");
+      const progressText = document.getElementById("progress-text");
+
+      const STORAGE_KEY = "frontend-roadmap-progress";
+
+      function loadProgress() {
+        const saved = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
+        checkboxes.forEach((cb, i) => (cb.checked = saved[i] || false));
+        updateProgress();
+      }
+
+      function saveProgress() {
+        const state = Array.from(checkboxes).map((cb) => cb.checked);
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+        updateProgress();
+      }
+
+      function updateProgress() {
+        const total = checkboxes.length;
+        const completed = Array.from(checkboxes).filter(
+          (cb) => cb.checked
+        ).length;
+        const percent = Math.round((completed / total) * 100);
+
+        progressBar.style.width = percent + "%";
+        progressText.textContent = `${completed} / ${total} tareas completadas (${percent}%)`;
+      }
+
+      checkboxes.forEach((cb) => cb.addEventListener("change", saveProgress));
+      loadProgress();
+    </script>
+  </body>
+</html>
